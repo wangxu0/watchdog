@@ -12,18 +12,18 @@ public class DateUtils {
     final static String DATE_FORMAT_STRING = "yyyy-MM-dd'T'HH:mm:ss'Z'";
     final static String TIME_ZONE = "GMT";
 
-    static String getStandardDateString() {
+    public static String getStandardDateString() {
         SimpleDateFormat df = new SimpleDateFormat(DATE_FORMAT_STRING);
         df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
         return df.format(new Date());
     }
 
-    static Long getStandardDateMillis() {
+    public static Long getStandardDateMillis() {
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(TIME_ZONE));
         return calendar.getTimeInMillis();
     }
 
-    static Date getStandardDate(String dateTimeString) {
+    public static Date getStandardDate(String dateTimeString) {
         SimpleDateFormat df = new SimpleDateFormat(DATE_FORMAT_STRING);
         df.setTimeZone(new SimpleTimeZone(0, TIME_ZONE));
         Date date = null;
